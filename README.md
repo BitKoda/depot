@@ -1,8 +1,8 @@
 # README
 
-Ruby version: 3.2.2
-Rails version: 7.0.4.3
-Database: Sqlite3
+* Ruby version: 3.2.2
+* Rails version: 7.0.4.3
+* Database: Sqlite3
 
 * * *
 
