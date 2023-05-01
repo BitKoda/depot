@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby version: 3.2.2
+Rails version: 7.0.4.3
+Database: Sqlite3
 
-Things you may want to cover:
+* * *
 
-* Ruby version
+## Start up in development mode
 
-* System dependencies
+After cloning the repository, set up the database, and start the development 
+server:
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. `bin/rails db:migrate` (To create the database tables)
+2. `bin/rails db:seed` (To seed the database)
+3. `bin/dev` (To start development server)
