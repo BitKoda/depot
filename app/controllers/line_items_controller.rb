@@ -25,6 +25,7 @@ class LineItemsController < ApplicationController
     @line_item = @cart.line_items.build(product: product) # rubocop:disable Style/HashSyntax
     respond_to do |format|
       if @line_item.save
+        session[:counter] = 0
         format.html do
           redirect_to cart_url(@line_item.cart),
                       notice: "#{product.title} added to cart."
