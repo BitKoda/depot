@@ -27,8 +27,7 @@ class LineItemsController < ApplicationController
       if @line_item.save
         session[:counter] = 0
         format.html do
-          redirect_to cart_url(@line_item.cart),
-                      notice: "#{product.title} added to cart."
+          redirect_to cart_url(@line_item.cart)
         end
         format.json { render :show, status: :created, location: @line_item }
       else
