@@ -1,4 +1,16 @@
 <div id="<%= dom_id cart %>">
+  <% if cart.line_items.empty? %>
+    <h2 class='font-bold text-xl mb-3'>Your Pragmatic cart is empty 😢</h2>
+    <p class="text-slate-500 font-medium">
+      Your shopping basket lives to serve. Give it purpose – fill it with 
+      beautiful books!
+    </p>
+    <p class="text-slate-500 font-medium">
+      Continue shopping on the <%= link_to "Pragmatic homepage", store_index_url, 
+        class: 'text-green-600' %> learn about today's deals, or visit your 
+        Wish List.
+    </p>
+  <% else %>
   <h2 class="font-bold text-lg mb-3">Your Cart</h2>
   <table class="table-auto">
     <% cart.line_items.each do |line_item| %>
@@ -10,6 +22,12 @@
         </td>
         <td class="text-right font-bold">
           <%= number_to_currency(line_item.total_price) %>
+        </td>
+        <td>
+          <%= button_to 'Delete', line_item, 
+              method: :delete,
+              class: 'ml-4 rounded-lg py-1 px-2 text-white bg-green-600' %>
+
         </td>
       </tr>
     <% end %>
@@ -25,4 +43,5 @@
   <%= button_to 'Empty Cart', cart, 
     method: :delete,
     class: 'ml-4 rounded-lg py-1 px-2 text-white bg-green-600' %>
+ <% end %>
 </div>
