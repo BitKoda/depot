@@ -25,7 +25,7 @@ class LineItemsController < ApplicationController
     @line_item = @cart.add_product(product)
     respond_to do |format|
       if @line_item.save
-        format.turbo_stream
+        format.turbo_stream { @current_item = @line_item }
         format.html { redirect_to store_index_url }
         session[:counter] = 0
       else
